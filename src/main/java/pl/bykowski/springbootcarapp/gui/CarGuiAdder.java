@@ -16,17 +16,17 @@ import pl.bykowski.springbootcarapp.model.CarType;
 import pl.bykowski.springbootcarapp.repository.CarRepo;
 
 @Route("car")
-public class CarGui extends VerticalLayout {
+public class CarGuiAdder extends VerticalLayout {
 
 
     @Autowired
-    public CarGui(CarRepo carRepo) {
+    public CarGuiAdder(CarRepo carRepo) {
         TextField textFieldModel = new TextField("Model:");
         TextField textFieldMark = new TextField("Mark:");
         ComboBox<CarType> carTypeComboBox = new ComboBox<>("Car Type", CarType.values());
         DatePicker datePicker = new DatePicker("Production date");
         Button button = new Button("Save");
-        
+
         button.addClickListener(clickEvent ->{
             Car car = new Car();
             car.setModel(textFieldModel.getValue());
